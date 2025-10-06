@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>الصفحة الرئيسية - home.html</title>
+    <style>
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background-color: #f2f2f2;
+            direction: rtl;
+            text-align: center;
+        }
+        h1 {
+            color: darkblue;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 60%;
+        }
+        table, th, td {
+            border: 1px solid #444;
+            padding: 8px;
+        }
+        th {
+            background-color: #ddd;
+        }
+        input, textarea {
+            padding: 5px;
+            margin: 5px;
+        }
+        .note {
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1> Home</h1>
+
+    <h2>names students</h2>
+    <table>
+        <tr>
+            <th>الاسم بالعربية</th>
+            <th>الاسم بالإنجليزية</th>
+            <th>الرقم الجامعي</th>
+        </tr>
+        <tr>
+            <td>رافع محمد علي </td>
+            <td>rafaa mohammed ali</td>
+            <td>rafaa_286417</td>
+        </tr>
+        <tr>
+            <td>ماريا الجبه جي</td>
+            <td>maria aljabhji</td>
+            <td>maria_215133</td>
+        </tr>
+        <tr>
+            <td>ميرا خالد الشومري</td>
+            <td>mira alshomari</td>
+            <td>mira_253765</td>
+            <tr>
+                <tr>
+                    <td>فيصل زيوانه</td>
+                    <td>faisal ziwana</td>
+                    <td>faisal_265003</td>
+                </tr>
+                <tr>
+                    <td>ايناس القادري</td>
+                    <td>enas alkadri</td>
+                    <td>enas_294045</td>
+                </tr>
+                <tr>
+                    <td>محمود كرنبه</td>
+                    <td>mahmoud krinbi</td>
+                    <td>mahmoud_310068</td>
+                </tr>
+            </tr>
+
+        </tr>
+    </table>
+
+    <h2>رابط النشر</h2>
+    <a href="file:///C:/iwp201/home.html" target="_blank">اضغط هنا للانتقال</a>
+
+    <h2>ملاحظات الطلاب</h2>
+    <form id="noteForm">
+        <label for="note">أدخل ملاحظتك:</label><br>
+        <textarea id="note" name="note" rows="4" cols="40"></textarea><br>
+        <input type="submit" value="إرسال">
+    </form>
+    <p class="note" id="displayNote"></p>
+
+    <!-- استدعاء jQuery -->
+    <script src="home.html"></script>
+    <script>
+        // التحقق من صحة الإدخال
+        $("#noteForm").submit(function(event) {
+            event.preventDefault();
+            let note = $("#note").val().trim();
+            if (note === "") {
+                alert("الرجاء إدخال ملاحظة!");
+            } else {
+                $("#displayNote").text("تم حفظ الملاحظة: " + note);
+                $("#note").val("");
+            }
+        });
+    </script>
+</body>
+</html>
